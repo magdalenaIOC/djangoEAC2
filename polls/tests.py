@@ -99,9 +99,10 @@ class MySeleniumTests(StaticLiveServerTestCase):
         # entrem com a superusuari
         self.login_com_superusuari()
 
-        # Verificam si ens surt el Site Administration abans de fe login
+        # Verificam si ens surt el Login després que l'usuari s'hagi identificat correctament
         try:
-            self.selenium.find_element(By.XPATH,'//input[@value="Loga"]')
+            #self.selenium.find_element(By.XPATH,'//input[@value="Log in"]')
+            self.selenium.find_element(By.XPATH,'//button[text(),"Logout"]')
             assert False, "Trobat element LOGIN que no hi ha de ser"
         except NoSuchElementException:
             pass

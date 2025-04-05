@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class MySeleniumTests(StaticLiveServerTestCase):
-    # carregar una BD de test
+    #carregar una BD de test
     fixtures = ['testdb.json',]
 
     @classmethod
@@ -101,7 +101,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
 
         # Verificam si ens surt el Site Administration abans de fe login
         try:
-            self.selenium.find_element(By.XPATH,'//input[@value="Log in"]')
+            self.selenium.find_element(By.XPATH,'//input[@value="Loga"]')
             assert False, "Trobat element LOGIN que no hi ha de ser"
         except NoSuchElementException:
             pass
